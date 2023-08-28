@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @parte %>
+
+<p>
+<%= @parte.color.name %>
+</p>
+<p>
+<%= @parte.brand.name %>
+</p>
+
+<p>
+Colores asociados: <%= @asociaciones[:colores].pluck(:nombre).join(', ') %>
+</p>
+<p>
+Marcas asociadas: <%= @asociaciones[:marcas].pluck(:nombre).join(', ') %>
+</p>
+
+<div>
+  <%= link_to "Edit this parte", edit_parte_path(@parte) %> |
+  <%= link_to "Back to partes", partes_path %>
+
+  <%= button_to "Destroy this parte", @parte, method: :delete %>
+</div>
